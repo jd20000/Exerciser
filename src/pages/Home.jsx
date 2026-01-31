@@ -1,0 +1,1 @@
+import { useNavigate } from "react-router-dom"; export default function Home() { const nav = useNavigate(); return ( <div className="page center"> <h2>Fitness Tracker</h2> <button onClick={() => nav("/workout")}>🏋️ Workout</button> <button onClick={() => nav("/calendar")}>📅 Calendar</button> </div> ); }

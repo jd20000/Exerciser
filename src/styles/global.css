@@ -1,0 +1,181 @@
+:root {
+  /* Backgrounds */
+  --bg-main: #cfe8ff;        /* light sky blue */
+  --bg-secondary: #eaf4ff;   /* airy blue-white */
+
+  /* Surfaces */
+  --card: rgba(255, 255, 255, 0.55);
+  --border: rgba(15, 23, 42, 0.12);
+
+  /* Text */
+  --text: #0f172a;
+  --muted: #475569;
+
+  /* Accents */
+  --accent-blue: #38bdf8;    /* calm futuristic blue */
+  --accent-orange: #fbbf24;  /* light orange */
+  --accent-yellow: #fde68a;  /* soft yellow */
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    var(--bg-main),
+    var(--bg-secondary)
+  );
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  color: var(--text);
+}
+
+
+.page {
+  padding: 16px;
+  padding-bottom: 80px;
+}
+
+h2 {
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+/* BUTTONS */
+button {
+  background: linear-gradient(135deg, #2dd4bf, #5eead4);
+  border: none;
+  color: #022c22;
+  padding: 14px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* HOME */
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 16px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card.done {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.3);
+}
+
+
+/* TOGGLE */
+input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--accent);
+}
+
+/* BOTTOM NAV */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.bottom-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+/* ===== REACT CALENDAR ===== */
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+.react-calendar__tile {
+  border-radius: 18px;
+  padding: 12px 0;
+  color: var(--text);
+}
+
+.react-calendar__tile--now {
+  border: 1px solid var(--accent);
+}
+
+.react-calendar__tile--active {
+  background: linear-gradient(135deg, #2dd4bf, #5eead4);
+  color: #022c22;
+}
+
+.react-calendar__navigation button {
+  background: none;
+  font-size: 16px;
+  color: var(--text);
+}
+.react-calendar__tile--now {
+  border: 1px solid var(--accent-blue);
+  background: rgba(56, 189, 248, 0.15);
+}
+
+.completed-day {
+  background: linear-gradient(
+    135deg,
+    var(--accent-orange),
+    var(--accent-yellow)
+  ) !important;
+  color: #78350f !important;
+  border-radius: 14px;
+  font-weight: 600;
+}
+
+button,
+.complete-btn {
+  background: linear-gradient(
+    135deg,
+    var(--accent-blue),
+    var(--accent-orange)
+  );
+  border: none;
+  color: #1e293b;
+  padding: 14px;
+  border-radius: 22px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.complete-btn:disabled {
+  background: linear-gradient(
+    135deg,
+    #bae6fd,
+    #fde68a
+  );
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+

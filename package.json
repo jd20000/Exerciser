@@ -2,11 +2,13 @@
   "name": "exercise-tracker",
   "private": true,
   "version": "1.0.0",
+{
   "scripts": {
     "dev": "vite",
     "preview": "vite preview",
-    "vercel-build": "npm install && npx vite build"
-  },
+    "build": "vite build"
+  }
+},
   "dependencies": {
     "@fullcalendar/daygrid": "^6.1.20",
     "@fullcalendar/interaction": "^6.1.20",
